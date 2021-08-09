@@ -19,5 +19,9 @@ public class CalendarActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(i);
     }
+    public void listSwitchClick(View v){
+        Intent i = new Intent(getApplicationContext(),ListActivity.class);
+        startActivity(i);
+    }
 
 }
