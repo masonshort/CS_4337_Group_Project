@@ -15,9 +15,9 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendar);
     }
 
-    /*public void backButtonOnClick(View v) {
+    public void backButtonOnClick(View v) {
         Intent i = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(i);
-    }*/
+    }
 
 }

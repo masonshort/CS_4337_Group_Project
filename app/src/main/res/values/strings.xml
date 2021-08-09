@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">group-project</string>
+    <string name="Add">Add a new subscription</string>
+    <string name="view">View your subscriptions</string>
 </resources>
