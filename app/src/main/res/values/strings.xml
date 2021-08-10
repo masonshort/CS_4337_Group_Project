@@ -2,4 +2,22 @@
     <string name="app_name">group-project</string>
     <string name="Add">Add a new subscription</string>
     <string name="view">View your subscriptions</string>
+    <string name="Addinfo">Please add subscription information:</string>
+    <string name="name">Name:</string>
+    <string name="date">Date:</string>
+    <string name="price">Price:</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="datehint">MM/DD/YYYY</string>
+    <string name="SubNamehint">Amazon Prime</string>
+    <string name="SubPricehint">12.99</string>
+    <string name="nametitle">Name</string>
+    <string name="listTitle">List</string>
+    <string name="dateTitle">Date</string>
+    <string name="priceTitle">Price</string>
+    <string name="intervalTitle">Pay Interval</string>
+    <string name="calendarText">Calendar</string>
 </resources>
