@@ -14,4 +14,10 @@
     <string name="datehint">MM/DD/YYYY</string>
     <string name="SubNamehint">Amazon Prime</string>
     <string name="SubPricehint">12.99</string>
+    <string name="nametitle">Name</string>
+    <string name="listTitle">List</string>
+    <string name="dateTitle">Date</string>
+    <string name="priceTitle">Price</string>
+    <string name="intervalTitle">Pay Interval</string>
+    <string name="calendarText">Calendar</string>
 </resources>
