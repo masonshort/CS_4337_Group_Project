@@ -9,9 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Groupproject">
-        <activity android:name=".CalendarActivity"/>
-        <activity android:name=".ListActivity"/>
-        <activity android:name=".NewSubActivity"/>
+        <activity android:name=".CalendarActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="View Renew Days"/>
+        <activity android:name=".ListActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="View Subscription List"/>
+        <activity android:name=".NewSubActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Add Subscription"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

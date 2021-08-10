@@ -5,35 +5,44 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.widget.Toast;
 
-
-
-
+import androidx.annotation.Nullable;
 
 
 public class MyDBHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "subInfoDB.db";
-    public static final String TABLE_NAME = "SubInfo";
-    public static final String COLUMN_ID = "SubId";
-    public static final String COLUMN_NAME = "SubName";
-    public static final String COLUMN_DATE = "Date";
-    public static final String COLUMN_PRICE = "SubPrice";
-    public static final String COLUMN_TYPE = "SubType";
+    private static final String DATABASE_NAME = "SubInfo.db";
+    private static final String TABLE_NAME = "SubInfo";
+    private static final String COLUMN_ID = "SubId";
+    private static final String COLUMN_NAME = "SubName";
+    private static final String COLUMN_DATE = "Date";
+    private static final String COLUMN_PRICE = "SubPrice";
+    private static final String COLUMN_TYPE = "SubType";
+    private final Context context;
 
-    public MyDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+    public MyDBHandler(@Nullable Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " ("
                 + COLUMN_ID + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME
-                + " STRING NOT NULL," + COLUMN_DATE + " STRING NOT NULL," + COLUMN_PRICE + " STRING NOT NULL," + COLUMN_TYPE + " STRING NOT NULL )";
+                + " TEXT NOT NULL," + COLUMN_DATE + " TEXT NOT NULL," + COLUMN_PRICE + " TEXT NOT NULL," + COLUMN_TYPE + " TEXT NOT NULL )";
         db.execSQL(CREATE_TABLE);
 
     }
+
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){}
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
+
+    }
+
+
     public String loadHandler() {
         String result = "";
         String query = "Select * FROM " + TABLE_NAME;
@@ -49,18 +58,37 @@ public class MyDBHandler extends SQLiteOpenHelper {
         db.close();
         return result;
     }
-    public void addHandler(Subscription sub) {
-        ContentValues values = new ContentValues();
-        //values.put(COLUMN_ID, sub.getSubId());
-        values.put(COLUMN_NAME, sub.getSubName());
-        values.put(COLUMN_DATE, sub.getDate());
-        values.put(COLUMN_PRICE, sub.getSubPrice());
-        values.put(COLUMN_TYPE, sub.getSubType());
 
+    public void addHandler(String name, String date, String price, String type) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.insert(TABLE_NAME, null, values);
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, name);
+        values.put(COLUMN_DATE, date);
+        values.put(COLUMN_PRICE, price);
+        values.put(COLUMN_TYPE, type);
+
+        long result = db.insert(TABLE_NAME, null, values);
+        if (result == -1) {
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Add Successful", Toast.LENGTH_SHORT).show();
+        }
         db.close();
     }
+
+    Cursor readAllData() {
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+
+}
+/*
     public Subscription findHandler(String subName) {
         String query = "Select * FROM " + TABLE_NAME + "WHERE" + COLUMN_NAME + " = " + "'" + subName + "'";
         SQLiteDatabase db = this.getWritableDatabase();
@@ -110,5 +138,5 @@ public class MyDBHandler extends SQLiteOpenHelper {
     }
 
 }
-
+*/
 
