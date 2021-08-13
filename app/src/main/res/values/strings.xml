@@ -15,7 +15,7 @@
     <string name="yearly">Yearly</string>
     <string name="submit">Submit</string>
     <string name="back">Back</string>
-    <string name="dateHint">MM/DD/YYYY</string>
+    <string name="dateHint">MM/DD</string>
     <string name="subNameHint">Amazon Prime</string>
     <string name="subPriceHint">12.99</string>
     <string name="nameTitle">Name</string>

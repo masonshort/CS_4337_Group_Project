@@ -94,7 +94,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="@string/calendarText"
-        app:backgroundTint="#5E16C18B"
+        app:backgroundTint="#9A03A9F4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

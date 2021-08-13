@@ -38,7 +38,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/listTitle"
-        app:backgroundTint="#5E16C18B"
+        android:textColorLink="#FFFFFF"
+        app:backgroundTint="#9A03A9F4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
