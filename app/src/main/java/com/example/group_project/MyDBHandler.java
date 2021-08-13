@@ -26,6 +26,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
         this.context = context;
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " ("
@@ -40,23 +41,6 @@ public class MyDBHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
 
-    }
-
-
-    public String loadHandler() {
-        String result = "";
-        String query = "Select * FROM " + TABLE_NAME;
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
-        while (cursor.moveToNext()) {
-            int result_0 = cursor.getInt(0);
-            String result_1 = cursor.getString(1);
-            result += String.valueOf(result_0) + " " + result_1 +
-                    System.getProperty("line.separator");
-        }
-        cursor.close();
-        db.close();
-        return result;
     }
 
     public void addHandler(String name, String date, String price, String type) {
@@ -86,57 +70,34 @@ public class MyDBHandler extends SQLiteOpenHelper {
         return cursor;
     }
 
+    void updateHandler(String id, String name, String date, String price, String type){
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_ID, id);
+        values.put(COLUMN_NAME, name);
+        values.put(COLUMN_DATE, date);
+        values.put(COLUMN_PRICE, price);
+        values.put(COLUMN_TYPE, type);
 
-}
-/*
-    public Subscription findHandler(String subName) {
-        String query = "Select * FROM " + TABLE_NAME + "WHERE" + COLUMN_NAME + " = " + "'" + subName + "'";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
-        Subscription sub = new Subscription();
-        if (cursor.moveToFirst()) {
-            cursor.moveToFirst();
-            //sub.setSubId(Integer.parseInt(cursor.getString(0)));
-            sub.setSubName(cursor.getString(1));
-            sub.setDate(cursor.getString(2));
-            sub.setSubPrice(cursor.getString(3));
-            sub.setSubPrice(cursor.getString(4));
-            cursor.close();
+        long result = database.update(TABLE_NAME, values, "SubId=?", new String[]{id});
+
+        if (result == -1) {
+            Toast.makeText(context, "Failed to Update", Toast.LENGTH_SHORT).show();
         } else {
-            sub = null;
+            Toast.makeText(context, "Update Successful", Toast.LENGTH_SHORT).show();
         }
-        db.close();
-        return sub;
-    }
-    public boolean deleteHandler(int ID) {
-        boolean result = false;
-        String query = "Select*FROM" + TABLE_NAME + "WHERE" + COLUMN_ID + "= '" + String.valueOf(ID) + "'";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
-        Subscription student = new Subscription();
-        if (cursor.moveToFirst()) {
-            student.setSubId(Integer.parseInt(cursor.getString(0)));
-            db.delete(TABLE_NAME, COLUMN_ID + "=?",
-                    new String[] {
-                String.valueOf(student.getSubId())
-            });
-            cursor.close();
-            result = true;
-        }
-        db.close();
-        return result;
-    }
-    public boolean updateHandler(int ID, String name, String date, String price, String type) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues args = new ContentValues();
-        args.put(COLUMN_ID, ID);
-        args.put(COLUMN_NAME, name);
-        args.put(COLUMN_DATE, date);
-        args.put(COLUMN_PRICE, price);
-        args.put(COLUMN_TYPE, type);
-        return db.update(TABLE_NAME, args, COLUMN_ID + "=" + ID, null) > 0;
     }
 
+    void deleteHandler(String rowId){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "SubId=?", new String[]{rowId});
+        if (result == -1) {
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Delete Successful", Toast.LENGTH_SHORT).show();
+        }
+        db.close();
+    }
 }
-*/
+
 

@@ -1,8 +1,12 @@
 <resources>
-    <string name="app_name">group-project</string>
-    <string name="Add">Add a new subscription</string>
+    <string name="app_name">Sub Track</string>
+    <string name="description">Hello! Welcome to the Sub Track App.
+    To begin, click "Add A New Subscription" and fill in your information.
+    </string>
+    <string name="listInstruction">To update or delete a subscription, click on it in the list</string>
+    <string name="add">Add a new subscription</string>
     <string name="view">View your subscriptions</string>
-    <string name="Addinfo">Please add subscription information:</string>
+    <string name="addInfo">Please add subscription information:</string>
     <string name="name">Name:</string>
     <string name="date">Date:</string>
     <string name="price">Price:</string>
@@ -11,13 +15,16 @@
     <string name="yearly">Yearly</string>
     <string name="submit">Submit</string>
     <string name="back">Back</string>
-    <string name="datehint">MM/DD/YYYY</string>
-    <string name="SubNamehint">Amazon Prime</string>
-    <string name="SubPricehint">12.99</string>
-    <string name="nametitle">Name</string>
+    <string name="dateHint">MM/DD/YYYY</string>
+    <string name="subNameHint">Amazon Prime</string>
+    <string name="subPriceHint">12.99</string>
+    <string name="nameTitle">Name</string>
     <string name="listTitle">List</string>
     <string name="dateTitle">Date</string>
     <string name="priceTitle">Price</string>
     <string name="intervalTitle">Pay Interval</string>
     <string name="calendarText">Calendar</string>
+    <string name="updateInfo">Please update subscription information:</string>
+    <string name="updateButton">Update</string>
+    <string name="deleteButton">Delete</string>
 </resources>

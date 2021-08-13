@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Groupproject">
+        <activity android:name=".UpdateActivity"
+            android:parentActivityName=".ListActivity"
+            android:label="Update Subscription Info"/>
         <activity android:name=".CalendarActivity"
             android:parentActivityName=".MainActivity"
             android:label="View Renew Days"/>

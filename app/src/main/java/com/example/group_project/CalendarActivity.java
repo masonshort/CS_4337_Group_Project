@@ -4,20 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 import android.content.Intent;
 
 public class CalendarActivity extends AppCompatActivity {
+
+    Button listSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
-    }
 
-    public void backButtonOnClick(View v) {
-        Intent i = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(i);
+        listSwitch = findViewById(R.id.backToListButton);
+        listSwitch.setOnClickListener(this::listSwitchClick);
+
     }
     public void listSwitchClick(View v){
         Intent i = new Intent(getApplicationContext(),ListActivity.class);

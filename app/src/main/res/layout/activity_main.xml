@@ -8,26 +8,40 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/submitNew_button"
-        android:layout_width="163dp"
+        android:id="@+id/view"
+        android:layout_width="165dp"
         android:layout_height="95dp"
-        android:layout_marginTop="412dp"
-        android:onClick="viewButtonOnClick"
         android:text="@string/view"
-        app:backgroundTint="#2196F3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/viewCal_button"
-        android:layout_width="171dp"
-        android:layout_height="96dp"
-        android:onClick="addButtonOnClick"
-        android:text="@string/Add"
         app:backgroundTint="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitNew_button" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="165dp"
+        android:layout_height="95dp"
+        android:text="@string/add"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.798" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="300dp"
+        android:layout_height="128dp"
+        android:gravity="center"
+        android:text="@string/description"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
 </androidx.constraintlayout.widget.ConstraintLayout>

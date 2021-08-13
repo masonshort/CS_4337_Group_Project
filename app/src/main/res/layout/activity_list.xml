@@ -8,13 +8,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="360dp"
-        android:layout_height="519dp"
+        android:layout_width="380dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613">
+        app:layout_constraintVertical_bias="0.538">
+
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -22,10 +25,11 @@
         android:id="@+id/nameText"
         android:layout_width="90dp"
         android:layout_height="40dp"
-        android:text="@string/nametitle"
+        android:gravity="center_horizontal"
+        android:text="@string/nameTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13" />
@@ -34,34 +38,37 @@
         android:id="@+id/dateText"
         android:layout_width="90dp"
         android:layout_height="40dp"
+        android:gravity="center_horizontal"
         android:text="@string/dateTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13" />
 
     <TextView
         android:id="@+id/priceText"
-        android:layout_width="90dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
+        android:gravity="center_horizontal"
         android:text="@string/priceTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintHorizontal_bias="0.678"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13" />
 
     <TextView
         android:id="@+id/intervalText"
-        android:layout_width="90dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
-        android:text="@string/datehint"
+        android:gravity="center_horizontal"
+        android:text="@string/intervalTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13" />
@@ -86,10 +93,25 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:onClick="calendarSwitchClick"
         android:text="@string/calendarText"
         app:backgroundTint="#5E16C18B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/listInstruction"
+        android:layout_width="380dp"
+        android:layout_height="75dp"
+        android:gravity="center"
+        android:text="@string/listInstruction"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

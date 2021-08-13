@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewSubActivity">
+    >
 
     <TextView
         android:id="@+id/textAdd"
         android:layout_width="212dp"
         android:layout_height="20dp"
-        android:text="@string/addInfo"
+        android:text="@string/updateInfo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -30,7 +29,7 @@
         app:layout_constraintVertical_bias="0.279" />
 
     <EditText
-        android:id="@+id/SubName"
+        android:id="@+id/UpdateSubName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -57,7 +56,7 @@
         app:layout_constraintVertical_bias="0.437" />
 
     <EditText
-        android:id="@+id/SubDate"
+        android:id="@+id/UpdateSubDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -84,7 +83,7 @@
         app:layout_constraintVertical_bias="0.58" />
 
     <EditText
-        android:id="@+id/SubPrice"
+        android:id="@+id/UpdateSubPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -99,7 +98,7 @@
         app:layout_constraintVertical_bias="0.631" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroupUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -110,19 +109,19 @@
         app:layout_constraintVertical_bias="0.821">
 
         <RadioButton
-            android:id="@+id/radioWeekly"
+            android:id="@+id/radioWeeklyUpdate"
             android:layout_width="144dp"
             android:layout_height="45dp"
             android:text="@string/weekly" />
 
         <RadioButton
-            android:id="@+id/radioMonthly"
+            android:id="@+id/radioMonthlyUpdate"
             android:layout_width="119dp"
             android:layout_height="59dp"
             android:text="@string/monthly" />
 
         <RadioButton
-            android:id="@+id/radioYearly"
+            android:id="@+id/radioYearlyUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/yearly" />
@@ -132,13 +131,27 @@
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/submit"
+        android:text="@string/updateButton"
+        app:backgroundTint="#1976D2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintVertical_bias="0.954" />
+
+    <Button
+        android:id="@+id/DeleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/deleteButton"
+        app:backgroundTint="#C50C0C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
